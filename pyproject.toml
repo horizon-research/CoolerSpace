@@ -7,3 +7,4 @@ name = "coolerspace"
 version = "1.0.0"
 requires-python = ">=3.10"
 dependencies = ["onnx", "networkx", "numpy"]
+readme="readme.md"
