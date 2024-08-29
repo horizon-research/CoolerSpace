@@ -27,20 +27,42 @@ jobs:
         name: python-package-distributions
         path: dist/
 
-  pypi-publish:
-    name: upload release to PyPI
-    runs-on: ubuntu-latest
-    needs:
-      - build
+#  pypi-publish:
+#    name: upload release to PyPI
+#
+#    runs-on: ubuntu-latest
+#    needs:
+#      - build
+#
+#    # Specifying a GitHub environment is optional, but strongly encouraged
+#    environment: release
+#    permissions:
+#      # IMPORTANT: this permission is mandatory for trusted publishing
+#      id-token: write
+#    steps:
+#      # retrieve your distributions here
+#      - name: Publish package distributions to PyPI
+#        uses: pypa/gh-action-pypi-publish@release/v1
 
-    # Specifying a GitHub environment is optional, but strongly encouraged
-    environment: release
+  publish-to-pypi:
+    name: >-
+      Publish CoolerSpace to PyPI
+
+    needs:
+    - build
+    runs-on: ubuntu-latest
+    environment:
+      name: release
+      url: https://pypi.org/p/CoolerSpace  # Replace <package-name> with your PyPI project name
     permissions:
-      # IMPORTANT: this permission is mandatory for trusted publishing
-      id-token: write
+      id-token: write  # IMPORTANT: mandatory for trusted publishing
     steps:
-      # retrieve your distributions here
-      - name: Publish package distributions to PyPI
+      - name: Download all the dists
+        uses: actions/download-artifact@v4
+        with:
+          name: python-package-distributions
+          path: dist/
+      - name: Publish distribution 📦 to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
 
 #  publish-to-pypi:
