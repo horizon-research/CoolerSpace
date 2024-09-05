@@ -93,8 +93,22 @@ Use the `cs.compile` command to specify what path you would like to compile the 
 cs.compile(path)
 ```
 
+## Citing CoolerSpace
+If you would like to cite CoolerSpace, please use the following:
+
+```
+@article{coolerspace,
+  title={CoolerSpace: A Language for Physically Correct and Computationally Efficient Color Programming},
+  author={Chen, Ethan and Chang, Jiwon and Zhu, Yuhao},
+  journal={Proceedings of the ACM on Programming Languages},
+  year={2024}
+  doi={10.1145/3689741}
+}
+```
+
 ## Related Repositories
 CoolerSpace's output ONNX files can be optimized using equality saturation.
 Our optimization tool is stored in a separate GitHub repository, found [here](https://github.com/horizon-research/onneggs).
 We also have a benchmarking suite for CoolerSpace, found [here](https://github.com/horizon-research/CoolerSpaceBenchmarker).
 The benchmarking suite was used to gather the data found in the paper.
+
