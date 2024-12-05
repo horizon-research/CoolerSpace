@@ -2,6 +2,8 @@
 
 CoolerSpace is a Python library that provides type checking for programs that manipulate colors.
 
+**WARNING: This library is currently not ready for production use. For research purposes, please double check the requirements at pyproject.toml and requirements.txt.**
+
 ## Installation
 CoolerSpace is [available on PyPI](https://pypi.org/project/coolerspace/)!
 You can install CoolerSpace with pip.
